@@ -6,9 +6,19 @@ package _09_pi_aloud;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class PiAloud {
+import javax.swing.JOptionPane;
 
-	// 1. Make a main method and make sure your program can run
+public class PiAloud {
+	public static void main(String[] args) {
+
+
+	String pi ="3.1415926535"; // 1. Make a main method and make sure your program can run
+for (int i = 0; i < pi.length(); i++) {
+	System.out.println(pi.charAt(i));
+	speak(pi.charAt(getInputFromUser()));
+}
+	
+
 
 	// 2. Make a String variable to hold the value of Pi. You could use http://www.piday.org/million/ for the value.
 
@@ -22,7 +32,7 @@ public class PiAloud {
 	// *6. Get a character from the user using the getInputFromUser() method
 	// *7. Compare the users' char to the next digit of Pi
 	// *8. If they are correct, print out "correct". If they are not, print "incorrect" to System.err.println
-
+	}
 	static void speak(char characterToSpeak) {
 		try {
 			Runtime.getRuntime().exec("say " + characterToSpeak).waitFor();
